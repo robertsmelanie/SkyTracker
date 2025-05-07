@@ -1,10 +1,3 @@
-fetch('https://ipwho.is/')
-    .then(res => res.json())
-    .then(data => {
-        console.log('RAW GEO DATA:', data);
-        // …
-    })
-    .catch(err => console.error(err));
 
 // Location Detection
 function showLocation(lat, lon, city, region, country) {
