@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0c2a;
+    color: #ffffff;
+    margin: 0;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.output {
+    background: #1a1b3a;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+input,
+button {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
