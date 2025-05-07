@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', getLocation);
 
 
 // Load ISS Flyovers
-function loadISSFlyovers(lat, lon) {
-    fetch(`https://api.open-notify.org/iss-pass.json?lat=${lat}&lon=${lon}`)
+function loadISSFlyovers(latitude, longitude) {
+    fetch(`https://api.open-notify.org/iss-pass.json?lat=${latitude}&lon=${longitude}`)
         .then(res => res.json())
         .then(data => {
             const passes = data.response;
