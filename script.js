@@ -3,7 +3,7 @@
 function showLocation(latitude, longitude, city, region, country) {
     document.getElementById('location').textContent =
         `${city}, ${region}, ${country} (Latitude: ${latitude.toFixed(4)}, Longitude: ${longitude.toFixed(4)})`;
-    loadISSFlyovers(latitude, longitude);
+    // loadISSFlyovers(latitude, longitude);
 }
 
 function lookupByIP() {
