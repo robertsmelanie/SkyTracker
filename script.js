@@ -1,9 +1,9 @@
 
 // Location Detection
-function showLocation(lat, lon, city, region, country) {
+function showLocation(latitude, longitude, city, region, country) {
     document.getElementById('location').textContent =
-        `${city}, ${region}, ${country} (Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)})`;
-    loadISSFlyovers(lat, lon);
+        `${city}, ${region}, ${country} (Latitude: ${latitude.toFixed(4)}, Longitude: ${longitude.toFixed(4)})`;
+    loadISSFlyovers(latitude, longitude);
 }
 
 function lookupByIP() {
@@ -57,24 +57,24 @@ document.addEventListener('DOMContentLoaded', getLocation);
 
 
 // Load ISS Flyovers
-function loadISSFlyovers(latitude, longitude) {
-    fetch(`https://api.open-notify.org/iss-pass.json?lat=${latitude}&lon=${longitude}`)
-        .then(res => res.json())
-        .then(data => {
-            const passes = data.response;
-            let html = '<ul>';
-            passes.forEach(pass => {
-                const date = new Date(pass.risetime * 1000);
-                html += `<li>${date.toLocaleString()} for ${pass.duration} seconds</li>`;
-            });
-            html += '</ul>';
-            document.getElementById('issData').innerHTML = html;
-        })
-        .catch(error => {
-            console.error("ISS data fetch error:", error);
-            document.getElementById('issData').textContent = "Failed to load ISS data.";
-        });
-}
+// function loadISSFlyovers(latitude, longitude) {
+//     fetch(`https://api.open-notify.org/iss-pass.json?lat=${latitude}&lon=${longitude}`)
+//         .then(res => res.json())
+//         .then(data => {
+//             const passes = data.response;
+//             let html = '<ul>';
+//             passes.forEach(pass => {
+//                 const date = new Date(pass.risetime * 1000);
+//                 html += `<li>${date.toLocaleString()} for ${pass.duration} seconds</li>`;
+//             });
+//             html += '</ul>';
+//             document.getElementById('issData').innerHTML = html;
+//         })
+//         .catch(error => {
+//             console.error("ISS data fetch error:", error);
+//             document.getElementById('issData').textContent = "Failed to load ISS data.";
+//         });
+// }
 // Load Astronomy Picture of the Day
 function loadAPOD() {
     fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
